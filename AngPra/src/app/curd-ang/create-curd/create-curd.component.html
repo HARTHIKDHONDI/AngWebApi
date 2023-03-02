@@ -1,0 +1,92 @@
+<div class="form-group row" >
+    <div class="col-4">
+        <label  class="form-label" > ID</label>
+        <input type="text" class="form-control " placeholder="ID"  id="exampleInputAI"  [(ngModel)]="id" name="aaa" #aaa="ngModel" required >
+        <p class="text-danger" *ngIf="!aaa.valid && aaa.touched">*required</p>  
+       
+
+        <label  class="form-label" >Full Name</label>
+        <input type="text" class="form-control " placeholder="Full Name" id="exampleInputAI"  [(ngModel)]="fullName" name="ON" #ON="ngModel" required>
+        <p class="text-danger" *ngIf="!ON.valid && ON.touched">*required</p>
+            
+       
+        <label  class="form-label" >Date Of Brith</label>
+        <input type="date" class="form-control " [(ngModel)]="dateOfBirth"  name="ECD" #ECD="ngModel" required>
+        <p class="text-danger" *ngIf="!ECD.valid && ECD.touched">*required</p>
+    </div>
+    <div class="col-4">
+        <label  class="form-label">Email ID</label>
+        <input type="email" class="form-control " placeholder="Email" id="exampleInputAI"  [(ngModel)]="emailID" name="kkk" #kkk="ngModel" required>
+        <p class="text-danger" *ngIf="!kkk.valid && kkk.touched">*required</p>
+
+        <label  class="form-label" >Mobile</label>
+        <input type="text" class="form-control" placeholder="Mobile" id="exampleInputJD" [(ngModel)]="mobile" name="mo" #mo="ngModel" required >
+        <p class="text-danger" *ngIf="!mo.valid && mo.touched">*required</p>
+        <h6>Gender:</h6> 
+                  
+        <div class="row mb-4  ">
+            <div class="hstack gap-3">
+            <div>
+            <label class="md-check">
+                <input type="radio" value="Female" [(ngModel)]="gender" name="g" #g="ngModel" required >
+                Female
+            </label>
+            </div>
+            <div>
+            <label class="md-check">
+                <input type="radio" value="Male" [(ngModel)]="gender" name="g" #g="ngModel" required >     
+                Male
+            </label>
+        </div>
+        <div>
+        <label class="md-check">
+            <input type="radio" value="Others" [(ngModel)]="gender" name="g" #g="ngModel" required>
+            Others
+        </label>
+        </div>
+        </div>
+        <p class="text-danger" *ngIf="!g.valid && g.touched">*required</p>
+    </div>
+
+    </div>
+    <div class="col-4">
+        <label  class="form-label" >Type Of Work</label>
+        <select class="form-select"  aria-label="Default select example4"  [(ngModel)]="typeOfWork" name="oow3" #oow3="ngModel" required >
+            <option value="Software Developer">Software Developer</option>
+            <option value="Trainee">Trainee</option>
+            <option value="Team Leader">Team Leader</option>
+        </select>
+        <p class="text-danger" *ngIf="!oow3.valid && oow3.touched">*required</p>
+
+        <label  class="form-label" >Password</label>
+        <input type="text" class="form-control" placeholder="Password" id="exampleInputJD" [(ngModel)]="password" name="pa" #pa="ngModel" required >
+        <p class="text-danger" *ngIf="!pa.valid && pa.touched">*required</p>
+        
+        <label  class="form-label">Status</label>
+        <select class="form-select" aria-label="Default select example5"  [(ngModel)]="status" name="oow4" #oow4="ngModel" required >
+            <option value="Active">Active</option>
+            <option value="Inactive">Inactive</option>
+            
+        </select>
+        <p class="text-danger" *ngIf="!oow4.valid && oow4.touched">*required</p>
+
+       
+
+    </div>
+    <div>
+        
+    </div>
+    <button (click)="addCurd()" *ngIf="curd.id==0" class="btn btn-org">
+
+        Add
+    </button>
+    <button (click)="updateCurd()" *ngIf="curd.id!=0" class="btn btn-org">
+
+        Update
+    </button>
+</div>
+
+
+
+
+

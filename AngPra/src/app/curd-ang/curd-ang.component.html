@@ -1,0 +1,106 @@
+<section class="ftco-section gap-3 p-3">
+    <div class="container">
+        
+        
+        <div class="row justify-content-center ">
+
+            <div class="col-md-6 text-center  mb-1">
+                <h2 class="heading-section" style="background-color: rgb(255, 165, 0);color: rgb(33, 26, 116);">CURD</h2>
+            </div> 
+        </div>
+        <!--MODAL-->
+        <div class="row ">
+            <div class="col d-flex justify-content-end">
+                <!--CREATE-->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-fullscreen">
+                        <div class="modal-content">
+                            <div class="modal-header" style="background-color: rgba(33, 26, 116, 0.755)">
+                                <h1 class="modal-title fs-5 text-white" id="exampleModalLabel">Registration</h1>
+                                <button type="button"  class="btn btn-close btn-close-white fs-5" data-bs-dismiss="modal"  aria-label="Close" (click)="closeClick()" id="create-curd-model-close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <app-create-curd [curd]="curd" *ngIf="ActiveCurd"></app-create-curd>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <button type="button" class="btn btn-dark me-3" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="addClick()" style="background-color: rgb(33, 26, 116)">
+                    <!-- <i class="fa fa-plus"></i> -->
+                    Create
+                </button>
+           
+            </div>
+        </div>
+        <div class="alert alert-success mt-3 " role="alert" id="add-success-alert">
+            Added Successfully
+            </div>
+            
+            <div class="alert alert-success mt-3" role="alert" id="update-success-alert">
+              Updated Successfully
+            </div>
+            
+            <div class="alert alert-success mt-3 " role="alert" id="delete-success-alert">
+              Deleted Successfully
+            </div>
+            <br>
+    
+       <!--TABLE-->
+          <div class="row-0">
+            <div class="col-12">
+                <div class="table-wrap d-flex justify-content-center align-content-center ">
+                    <div class="table-responsive">
+                        <table class="table table-striped" id="myTable">
+
+                            <thead class="text-white">
+                                <tr  style="background-color:rgb(33, 26, 116)">
+                                    <th>Id</th>
+                                    <th >Full Name</th>
+                                    <th>Date Of Birth</th>
+                                    <th>Email ID</th>
+                                    <th >Mobile</th>
+                                    <th >Gender</th>
+                                    <th>Type Of Work</th>
+                                    <th >Password</th>
+                                    <th>Status</th>
+                                    <th>Options</th>
+                                </tr>
+                            </thead>
+                            
+                            <tbody>
+                                <tr *ngFor="let Item of curdList" >
+                                    <td>{{Item.id}}</td>
+                                    <td>{{Item.fullName}}</td>
+                                    <td>{{Item.dateOfBirth}}</td>
+                                    <td>{{Item.emailID}}</td>
+                                    <td>{{Item.mobile}}</td>
+                                    <td>{{Item.gender}}</td>
+                                    <td>{{Item.typeOfWork}}</td>
+                                    <td>{{Item.password}}</td>
+                                    <td>{{Item.status}}</td>
+
+                                    <td>
+                                        <button type="button"class="btn btn-light mr-1 me-3 mb-3" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                        (click)="editClick(Item)"
+                                        >
+                                            Edit
+                                        </button>
+                                        <button type="button" class="btn btn-light mr-1" 
+                                        (click)="deleteClick(Item)"
+                                        >
+                                            Delete
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+
+                        </table> 
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
